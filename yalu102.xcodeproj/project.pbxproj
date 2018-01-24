@@ -177,7 +177,7 @@
 				TargetAttributes = {
 					EA9900E21E1E9F060056FEBD = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = FQDT2YB7E9;
+						DevelopmentTeam = FUV5KWMMAV;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -358,15 +358,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = FQDT2YB7E9;
+				DEVELOPMENT_TEAM = FUV5KWMMAV;
 				INFOPLIST_FILE = yalu102/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/yalu102",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kim.cracksby.yalu1021;
+				PRODUCT_BUNDLE_IDENTIFIER = kim.cracksby.yalu102;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = armv7;
 			};
@@ -379,15 +379,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = FQDT2YB7E9;
+				DEVELOPMENT_TEAM = FUV5KWMMAV;
 				INFOPLIST_FILE = yalu102/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/yalu102",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kim.cracksby.yalu1021;
+				PRODUCT_BUNDLE_IDENTIFIER = kim.cracksby.yalu102;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = armv7;
 			};
