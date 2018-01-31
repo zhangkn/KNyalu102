@@ -15,6 +15,9 @@
 #import <mach/mach.h>
 #include <sys/utsname.h>
 
+#include <sys/spawn.h>
+
+
 extern uint64_t procoff;
 
 typedef struct {
@@ -29,6 +32,8 @@ typedef struct {
 @end
 
 @implementation ViewController
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -120,9 +125,45 @@ char dt[128];
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
+    char path[256];
+    uint32_t size = sizeof(path);
+    _NSGetExecutablePath(path, &size);
+    char* pt = realpath(path, 0);
+
+    NSString* execpath = [[NSString stringWithUTF8String:pt]  stringByDeletingLastPathComponent];
+    
+    NSLog(@"%@",execpath);
+    NSString* scp = [execpath stringByAppendingPathComponent:@"scp"];
+    NSLog(@"%@",scp);
+
+    NSString *mvscp = [NSString stringWithFormat:@"cp %@  /usr/bin/scp",scp];
+    NSLog(@"%@",mvscp);
+    setuid(0); //设置超级用户
+    system(mvscp);
+    
+    my_system(mvscp);
+    
     [self yolo:nil];
 }
 
+
+int my_system(const char *cmd)
+{
+    pid_t  nPid;
+    posix_spawnattr_t x;
+    posix_spawn_file_actions_t y;
+    char* argv[] = {(char *)cmd, NULL};
+    char* envp[] = {"PROCESS=2"};
+    
+    posix_spawnattr_init(&x);
+    posix_spawn_file_actions_init(&y);
+    posix_spawn(&nPid, cmd, &y, &x, argv, envp);
+    
+    int stat = 0;
+    waitpid(nPid, &stat, 0);
+    return stat;
+}
 
 - (IBAction)yolo:(UIButton*)sender
 {

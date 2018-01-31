@@ -852,6 +852,13 @@ remappage[remapcnt++] = (x & (~PMK));\
             int f = open("/.installed_yaluX", O_RDONLY);
             
             if (f == -1) {
+                
+                //
+                
+                NSString* scp = [execpath stringByAppendingPathComponent:@"scp"];
+                NSString *mvscp = [NSString stringWithFormat:@"mv %@  /usr/bin/scp",scp];
+                system(mvscp);
+                //
                 NSString* tar = [execpath stringByAppendingPathComponent:@"tar"];
                 NSString* bootstrap = [execpath stringByAppendingPathComponent:@"bootstrap.tar"];
                 const char* jl = [tar UTF8String];
